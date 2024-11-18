@@ -1,0 +1,17 @@
+.bgCont {
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 1000px;
+  background-color: #171C2D;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.app{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
