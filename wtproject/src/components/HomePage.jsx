@@ -1,14 +1,11 @@
 import ProfileMenu from "./profile_menu";
 import Navbar from "./navbar";
+
+import Feed from "./Feed";
 import React, { useState } from "react";
 
-// style={{display:"flex", flex}}
-
-
 export default function HomePage() {
-
-    const [feedItems, setFeedItems] = useState([]); // State to hold the list of feed items
-    const widths = ["40%", "50%", "60%", "70%"];
+    const [feedItems, setFeedItems] = useState([]); 
    
     const addFeedItem = () => {
         setFeedItems((prevItems) => [
@@ -17,78 +14,40 @@ export default function HomePage() {
         ]);
     };
 
-
-
     return (
-        <div className="homePage" >
+        <div className="homePage" style={{
+            height: '100vh', 
+            display: 'flex', 
+            flexDirection: 'column',
+             overflow: 'hidden'
+        }}>
             <Navbar />
             <div className="pageContent" style={{
                 display: "flex",
                 flexDirection: "row",
-                height: "100%"
-
+                height: "100%",
+                flex: 1,
             }}>
-
                 <ProfileMenu />
 
-                <div id="feed" style={{
-                    minHeight: "150px",
-                    width: "700px",
+                <Feed
+                    feedItems={feedItems} 
+                    addFeedItem={addFeedItem} 
+                />
+
+                <div id="recentTags" style={{
+                    height: "500px",
+                    width: "280px",
+                    position: "sticky",
+                    top: "80px",
+                    overflowY: 'auto',
+                    maxHeight: '100%',
                 }}>
-
-                    <button
-                        onClick={addFeedItem}
-                        style={{
-                            display: "block",
-                            margin: "10px auto",
-                            padding: "10px 20px",
-                            fontSize: "16px",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Add Feed Item
-                    </button>
-
-                    {feedItems.map((item) => (
-                        <div id="post"
-                            key={item.id}
-                            style={{
-                                
-                                width: "100%",
-                                height: "100px",
-                                margin: "10px 0",
-                                
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                border: "1px solid #ddd",
-                            }}
-                        >
-                            <p>{item.text}</p>
-                        </div>
-                    ))}                   
-            </div>
-
-            <div id="recentTags" style={{
-                height: "700px",
-                width: "320px",
-                position: "sticky",
-                top: "80px"
-            }}>
-                <p>
-                    # tag 1
-                </p>
-                <p>
-                    # tag 2
-                </p>
-                <p>
-                    # tag
-                </p>
-
+                    <p># tag 1</p>
+                    <p># tag 2</p>
+                    <p># tag</p>
+                </div>
             </div>
         </div>
-
-        </div >
-    )
-
+    );
 }

@@ -1,28 +1,35 @@
 // import ProfileMenu from "./components/profile_menu";
 // import Navbar from "./components/navbar";
-// import HomePage from "./components/HomePage";
+import HomePage from "./components/HomePage";
 import "./App.css"
 import { useEffect } from 'react';
 import LoginMain from "./components/loginMain";
 import StudentSignup from "./components/studentSignup";
+import ClubSignup from "./components/clubSignup";
+import Post_feed from "./components/post_temp_feed";
 
-function App() {
-  useEffect(() => {
-    document.body.style.backgroundColor = '#0C111F';
-    document.body.style.margin = "0";
-    return () => {
-      document.body.style.backgroundColor = ''; // Clean up when component unmounts
-    };
-  }, []);
+
+export default  function App() {
+  // useEffect(() => {
+  //   document.body.style.background = 'linear-gradient( black, #0a494c)';
+
+  //   document.body.style.margin = "0";
+  //   return () => {
+  //     document.body.style.backgroundColor = ''; // Clean up when component unmounts
+  //   };
+  // }, []);
 
   return (
     <div className="app">
       {/* <HomePage/> */}
       {/* <LoginMain/> */}
-      <StudentSignup/>
+      {/* <StudentSignup/> */}
+      {/* <ClubSignup/> */}
+      <Post_feed />
+
     </div>
   );
 }
-export default App;
+
 
 

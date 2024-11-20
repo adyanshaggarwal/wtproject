@@ -2,15 +2,18 @@
     position: sticky;
     top: 80px;
     margin: 20px;
-    z-index: -1;
-    justify-content: center;
+    /* z-index: -1; */
+    /* justify-content: center; */
     align-items: center;
     text-align: center;
     justify-content: center;
-    align-content: center;
+    /* align-content: center; */
     border-radius: 20px;
     color: white;
-    background-color: #171C2D;
+    padding: 10px;
+    /* background-color:#171C2D ; */
+    /* background: linear-gradient(135deg, #0C111F, #0a494c) */
+    /* #171C2D */
 }
 
 
@@ -31,7 +34,13 @@
     /* align-content: center; */
     border-radius: 20px;
     color: white;
-    background-color: #171C2D;
+    /* background-color: #0C111F; */
+    background-color:#171C2D ;
+    /* background: linear-gradient(135deg, #0C111F, #0a494c) */
+}
+
+#feed::-webkit-scrollbar {
+    display: none;  /* WebKit browsers (Chrome, Safari) */
 }
 
 #recentTags {
@@ -46,7 +55,9 @@
     align-content: center;
     border-radius: 20px;
     color: white;
-    background-color: #171C2D;
+    /* background-color: #0C111F; */
+    background-color:#171C2D ;
+    /* background: linear-gradient(135deg, #0C111F, #0a494c) */
 }
 
 #profileImage {
@@ -55,41 +66,57 @@
     height: 150px;
 }
 
-#navBut {
-
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    border-radius: 20px;
-    background-color: white;
-    border: white;
-
-}
-
 #navBar {
     position: sticky;
     top: 0;
     display: flex;
-    justify-self: center;
-    justify-content: end;
-    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
     width: 99%;
-    /* margin: 20px; */
+    margin: 20px;
     padding: 5px;
-    background-color: #424651;
 }
 
+
+#navBar input::placeholder {
+    color: white;
+    opacity: 0.6; /* Optional: to make it slightly transparent */
+}
+
+
 #navContent {
-    width: 300px;
-    height: 30px;
+    width: 350px; /* Increased width to accommodate larger buttons */
+    height: 50px; /* Increased height */
     display: flex;
-    justify-self: end;
-    align-self: center;
+    align-items: center;
     justify-content: space-evenly;
+    margin-right: 20px;
+}
+
+#navBut {
+    width: 100px; /* Fixed width for consistent button size */
+    height: 40px; /* Fixed height */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    background-color: #88D4AB;
+    border: none;
+    font-size: 16px; /* Slightly larger font */
+    cursor: pointer;
+    transition: 
+        background-color 0.2s ease,
+        transform 0.1s ease; /* Smooth transition for color and transform */
+    outline: none; /* Remove default focus outline */
 }
 
 #navBut:hover {
-    background-color: rgb(212, 215, 218);
-    font-size: 15px;
+    background-color: #7ac99b; /* Slightly darker shade on hover */
+}
+
+#navBut:active {
+    transform: scale(0.95); /* Slight press down effect */
+    background-color: #6abd8f; /* Even darker shade when pressed */
 }
